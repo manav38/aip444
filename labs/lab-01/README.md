@@ -6,3 +6,4 @@ The tool reads staged Git changes using:
 
 ```bash
 git diff --staged
+Normal mode test completed for Lab 1.

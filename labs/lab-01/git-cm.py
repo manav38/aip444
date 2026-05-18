@@ -79,14 +79,14 @@ def generate_commit_message(api_key, diff, is_creative):
 
     try:
         response = client.chat.completions.create(
-            model="google/gemma-4-31b-it:free",
-            temperature=temperature,
-            messages=[
-                {"role": "system", "content": system_prompt},
-                {"role": "user", "content": diff}
-            ]
-        )
-
+         model="meta-llama/llama-3.3-70b-instruct:free",
+         temperature=temperature,
+        max_tokens=80,
+        messages=[
+        {"role": "system", "content": system_prompt},
+        {"role": "user", "content": diff}
+        ]
+    )
         commit_message = response.choices[0].message.content.strip()
 
         print()
